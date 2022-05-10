@@ -111,6 +111,7 @@ fill_missing_interval <- function(x, min_known_n = NULL, min_known_p = NULL) {
 #' @param min_known_n numeric value: the minimum number of not-missing values
 #' @param min_known_p numeric value between 0 and 1: the minimum fraction of not-missing values
 #' @param type the type of fill missing function to be called
+#' @export
 fill_missing <- function(x, min_known_n = NULL, min_known_p = NULL, type) {
 
   stopifnot(type %in% c("last",
