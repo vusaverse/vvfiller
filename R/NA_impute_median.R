@@ -14,6 +14,7 @@
 #' @return Nieuwe data frame waarbij de missende waarden zijn opgevuld.
 #' @export
 NA_impute_median <- function(data, var, jaar = 2014){
+  INS_Inschrijvingsjaar <- NULL
   print(var)
 
   ## Voeg een indicator toe voor wanneer

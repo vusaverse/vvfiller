@@ -24,7 +24,8 @@
 ### Geschiedenis:
 ### 28-09-2018: JvZ: Aanmaak bestand
 ################################################################################
-
+## Set project name
+package_name <- basename(rstudioapi::getActiveProject())
 ## =============================================================================
 ## Installeer en laad de packages in
 build_packages <- c("devtools",
@@ -47,6 +48,10 @@ invisible(lapply(build_packages,
 
 ## Pull nu eerst de laatste versie (bvb via Smartgit)
 
+## Create Manual
+devtools::check(manual = T)
+devtools::build_manual(path = paste0("G:/DSZ/SA2016/Datasets/Packages/package_man/", package_name, "/"))
+
 devtools::document()
 ## Controleer of het package correct is, en gebouwd kan worden.
 devtools::check()
@@ -63,7 +68,7 @@ devtools::check()
 usethis::use_version()
 
 ## Bouw het package, en release het naar de juiste folder
-devtools::build(path = "G:/DSZ/SA2016/Datasets/Packages/vvfiller/")
+devtools::build(path = paste0("G:/DSZ/SA2016/Datasets/Packages/", package_name, "/"))
 
 ## Maak weer gebruik van de development versie
 usethis::use_dev_version()
