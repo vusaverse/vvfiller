@@ -100,7 +100,7 @@ fill_missing_last <- function(x, min_known_n = NULL, min_known_p = NULL) {
 #' fill_missing_interval(c(NA, 1, 2, NA))
 #' fill_missing_interval(c(NA, 10, 20, NA))
 fill_missing_interval <- function(x, min_known_n = NULL, min_known_p = NULL) {
-  fill_missing(x, min_known_n, min_known_p, type = "interval")
+  return(fill_missing(x, min_known_n, min_known_p, type = "interval"))
 }
 
 

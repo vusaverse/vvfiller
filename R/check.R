@@ -9,7 +9,7 @@
 #' @return TRUE or FALSE
 check_some_missing <- function(x) {
   x <- unique(x)
-  any(is.na(x)) & !all(is.na(x))
+  return(any(is.na(x)) & !all(is.na(x)))
 }
 
 check_min_known_p <- function(x, x_na_omit, min_known_p) {
@@ -19,7 +19,7 @@ check_min_known_p <- function(x, x_na_omit, min_known_p) {
   if (known_p < min_known_p) {
     return(FALSE)
   } else {
-    TRUE
+    return(TRUE)
   }
 
 }
@@ -31,7 +31,7 @@ check_min_known_n <- function(x, x_na_omit, min_known_n) {
   if (known_n < min_known_n) {
     return(FALSE)
   } else {
-    TRUE
+    return(TRUE)
   }
 }
 
@@ -49,5 +49,5 @@ check_min_known <- function(x, x_na_omit, min_known_n, min_known_p){
       return(FALSE)
     }
   }
-  TRUE
+  return(TRUE)
 }

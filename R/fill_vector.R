@@ -9,7 +9,7 @@ fill_vector_strict <- function(x, x_na_omit) {
     ## use fill_value with the only non- missing value
     return(fill_value(x, x_na_omit[1]))
   }
-  x
+  return(x)
 }
 
 #' fill_vector_last
@@ -18,7 +18,7 @@ fill_vector_strict <- function(x, x_na_omit) {
 #' @param x_na_omit the x vector without NA values
 fill_vector_last <- function(x, x_na_omit) {
   ## use fill_value with the last known value
-  fill_value(x, x_na_omit[length(x_na_omit)])
+  return(fill_value(x, x_na_omit[length(x_na_omit)]))
 }
 
 
@@ -28,7 +28,7 @@ fill_vector_last <- function(x, x_na_omit) {
 #' @param x_na_omit the x vector without NA values
 fill_vector_min <- function(x, x_na_omit) {
   ## use fill_value with the minimum value
-  fill_value(x, min(unique(x_na_omit)))
+  return(fill_value(x, min(unique(x_na_omit))))
 }
 
 #' fill_vector_max
@@ -37,7 +37,7 @@ fill_vector_min <- function(x, x_na_omit) {
 #' @param x_na_omit the x vector without NA values
 fill_vector_max <- function(x, x_na_omit) {
   ## use fill_value with the maximum value
-  fill_value(x, max(unique(x_na_omit)))
+  return(fill_value(x, max(unique(x_na_omit))))
 }
 
 #' fill_vector_previous
@@ -53,7 +53,7 @@ fill_vector_previous <- function(x) {
   ## determine how often a value has to be repeated within the vector
   rep_times <- diff(c(position_not_na, length(x) + 1))
   ## repeat the value at the determined positions
-  rep(x[position_not_na], times = rep_times)
+  return(rep(x[position_not_na], times = rep_times))
 }
 
 
@@ -97,6 +97,6 @@ fill_vector_interval <- function(x) {
   if (!identical(x[which(!is.na(x))], x_new[which(!is.na(x))])) {
     return(x)
   }
-  x_new
+  return(x_new)
 
 }

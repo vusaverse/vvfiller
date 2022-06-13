@@ -13,5 +13,5 @@ fill_value <- function(x, value) {
   stopifnot(class(x) == class(value))
   i <- which(is.na(x))
   x[i] <- value
-  x
+  return(x)
 }
