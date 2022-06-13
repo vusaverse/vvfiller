@@ -1,19 +1,18 @@
 #' NA impute median
 #'
-#' Is een specifieke functie die op basis van 1 variabele, 2 nieuwe variabelen aanmaakt
-#' voor gebruik in een voorspelmodel:
-#' 1) de variabele, waarbij de missende waarden opgevuld zijn door de mediaan van
-#' het opgegeven jaartal.
-#' 2) een indicator voor wanneer de variabele missing is.
+#' Is a specialised function which takes a variable and turns it into two new variables
+#' to be used in a prediction model.
+#' 1) the variable for which missing values are imputed by the median for the given year.
+#' 2) an indicator when the variable is missing
 #'
-#' @param data De data frame.
+#' @param data The data frame.
 #'
-#' @param var De variabele waarmee nieuwe variabelen worden aangemaakt.
-#' @param jaar Jaartal waarmee missende waarden worden opgevuld door de mediaan.
+#' @param var The variable used to create new variables.
+#' @param year Year used for the median for imputation.
 #'
-#' @return Nieuwe data frame waarbij de missende waarden zijn opgevuld.
+#' @return New data frame in which missing values are filled.
 #' @export
-NA_impute_median <- function(data, var, jaar = 2014){
+NA_impute_median <- function(data, var, year = 2014){
   INS_Inschrijvingsjaar <- NULL
   print(var)
 
@@ -21,7 +20,7 @@ NA_impute_median <- function(data, var, jaar = 2014){
   data[,paste("NA_ind_",var,sep="")] <- is.na(data[,var])
 
   ## Bereken de mediaan van het oorspronkelijke veld:
-  mediaan <- stats::median(subset(data,INS_Inschrijvingsjaar%in%jaar)[,var],na.rm=T)
+  mediaan <- stats::median(subset(data,INS_Inschrijvingsjaar%in%year)[,var],na.rm=T)
 
   ## Voeg een nieuw, opgevuld veld toe:
   new_var <- paste(var,"opgevuld",sep="_")

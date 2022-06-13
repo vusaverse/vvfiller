@@ -4,24 +4,23 @@
 \alias{NA_impute_median}
 \title{NA impute median}
 \usage{
-NA_impute_median(data, var, jaar = 2014)
+NA_impute_median(data, var, year = 2014)
 }
 \arguments{
-\item{data}{De data frame.}
+\item{data}{The data frame.}
 
-\item{var}{De variabele waarmee nieuwe variabelen worden aangemaakt.}
+\item{var}{The variable used to create new variables.}
 
-\item{jaar}{Jaartal waarmee missende waarden worden opgevuld door de mediaan.}
+\item{year}{Year used for the median for imputation.}
 }
 \value{
-Nieuwe data frame waarbij de missende waarden zijn opgevuld.
+New data frame in which missing values are filled.
 }
 \description{
-Is een specifieke functie die op basis van 1 variabele, 2 nieuwe variabelen aanmaakt
-voor gebruik in een voorspelmodel:
+Is a specialised function which takes a variable and turns it into two new variables
+to be used in a prediction model.
 \enumerate{
-\item de variabele, waarbij de missende waarden opgevuld zijn door de mediaan van
-het opgegeven jaartal.
-\item een indicator voor wanneer de variabele missing is.
+\item the variable for which missing values are imputed by the median for the given year.
+\item an indicator when the variable is missing
 }
 }
