@@ -12,7 +12,7 @@
 #'
 #' @return New data frame in which missing values are filled.
 #' @export
-NA_impute_median <- function(data, var, year = 2014){
+na_impute_median <- function(data, var, year = 2014){
   INS_Inschrijvingsjaar <- NULL
   print(var)
 
