@@ -49,12 +49,11 @@ invisible(lapply(build_packages,
 ## Pull nu eerst de laatste versie (bvb via Smartgit)
 
 ## Create Manual
+devtools::document()
 devtools::check(manual = T)
+devtools::test()
 devtools::build_manual(path = paste0("G:/DSZ/SA2016/Datasets/Packages/package_man/", package_name, "/"))
 
-devtools::document()
-## Controleer of het package correct is, en gebouwd kan worden.
-devtools::check()
 
 ## Commit je veranderingen in Smartgit (of handmatig in de terminal, naast console)
 # Als je dit niet doet krijg je bij onderstaande (use_version) command de vraag:
