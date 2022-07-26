@@ -151,3 +151,29 @@ fill_missing <- function(x, min_known_n = NULL, min_known_p = NULL, type) {
     return(fill_vector_interval(x))
   }
 }
+
+#' Fill with aggregate by group
+#'
+#' Function to calculate a summary statistic (mean, median, vvconverter::mode, min, max etc.) by group
+#' and use it to fill missing values. Note: this takes and produces a tibble rather than a vector.
+#' @param df tibble to use
+#' @param group string or vector of strings: columns to group by
+#' @param col string: column to impute
+#' @param overwrite_col boolean: whether to overwrite column. If FALSE, a new column with suffix _imputed will be created
+#' @param statistic function: summary statistic to use (mean, median, min etc.). For now requires a function with na.rm argument
+#' @return a tibble with filled column
+#' @importFrom dplyr %>%
+#' @importFrom rlang :=
+#' @export
+fill_with_agg_by_group <- function(df, group, col, overwrite_col = F, statistic = mean){
+  ## Fills missing values with summary statistics (mean, median, vvconverter::mode, etc.) per group
+  col_output = ifelse(overwrite_col, col, paste0(col, "_imputed"))
+  df <- df %>%
+    ## !!!syms also accepts vector of strings
+    dplyr::group_by(!!!dplyr::syms(group)) %>%
+    dplyr::mutate({{col_output}} := ifelse(is.na(!!dplyr::sym(col)),
+                                    statistic(!!dplyr::sym(col), na.rm = T),
+                                    !!dplyr::sym(col))) %>%
+    dplyr::ungroup()
+  return(df)
+}
