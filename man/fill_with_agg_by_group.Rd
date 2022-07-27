@@ -4,21 +4,30 @@
 \alias{fill_with_agg_by_group}
 \title{Fill with aggregate by group}
 \usage{
-fill_with_agg_by_group(df, group, col, overwrite_col = F, statistic = mean)
+fill_with_agg_by_group(
+  df,
+  group,
+  columns,
+  overwrite_col = FALSE,
+  statistic = mean,
+  fill_empty_group = FALSE
+)
 }
 \arguments{
 \item{df}{tibble to use}
 
 \item{group}{string or vector of strings: columns to group by}
 
-\item{col}{string: column to impute}
+\item{columns}{string or vector of strings: columns to impute}
 
 \item{overwrite_col}{boolean: whether to overwrite column. If FALSE, a new column with suffix _imputed will be created}
 
 \item{statistic}{function: summary statistic to use (mean, median, min etc.). For now requires a function with na.rm argument}
+
+\item{fill_empty_group}{boolean: If TRUE, fills groups that only contain NA with summary statistic of entire column}
 }
 \value{
-a tibble with filled column
+a tibble with filled column(s)
 }
 \description{
 Function to calculate a summary statistic (mean, median, vvconverter::mode, min, max etc.) by group
