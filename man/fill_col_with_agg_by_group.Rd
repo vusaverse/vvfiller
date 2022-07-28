@@ -4,7 +4,7 @@
 \alias{fill_col_with_agg_by_group}
 \title{Fill column with aggregate by group}
 \usage{
-fill_col_with_agg_by_group(df, group, col, col_output, statistic)
+fill_col_with_agg_by_group(df, group, col, statistic)
 }
 \arguments{
 \item{df}{tibble to use}
@@ -13,18 +13,12 @@ fill_col_with_agg_by_group(df, group, col, col_output, statistic)
 
 \item{col}{string: column to impute}
 
-\item{col_output}{string: column name of new imputed column}
-
 \item{statistic}{function: summary statistic to use (mean, median, min etc.). For now requires a function with na.rm argument}
 }
 \value{
-a tibble with filled column
+a filled vector
 }
 \description{
-Function for use in fill_with_agg_by_group(). Could be used by itself, but adds no value over
-fill_with_agg_by_group().
-}
-\details{
 Calculate a summary statistic (mean, median, vvconverter::mode, min, max etc.) by group
-and use it to fill missing values in a single column. Note: this takes and produces a tibble rather than a vector.
+and use it to fill missing values in a column. Primarily for use in fill_with_agg_by_group().
 }
