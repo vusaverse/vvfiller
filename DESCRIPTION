@@ -1,10 +1,10 @@
 Package: vvfiller
-Title: What the Package Does (One Line, Title Case)
+Title: Fill Data Points
 Version: 0.5.3.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Tomer", "Iwan", email = "t.iwan@vu.nl", role = c("cre", "aut"),
+    person("Corneel", "den Hartogh", email = "c.f.den.hartogh@vu.nl", role = c("cre", "aut")))
+Description: This package provides numerous methods to fill either missing or skewed data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

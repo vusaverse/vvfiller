@@ -71,3 +71,6 @@ devtools::build(path = paste0("G:/DSZ/SA2016/Datasets/Packages/", package_name, 
 
 ## Maak weer gebruik van de development versie
 usethis::use_dev_version()
+
+## push changes
+system("git push")
