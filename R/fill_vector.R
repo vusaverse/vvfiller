@@ -1,4 +1,3 @@
-
 #' fill_vector_strict
 #'
 #' @param x the vector to be filled

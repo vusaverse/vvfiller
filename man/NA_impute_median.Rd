@@ -17,7 +17,7 @@ na_impute_median(data, var, year = 2014)
 New data frame in which missing values are filled.
 }
 \description{
-Is a specialised function which takes a variable and turns it into two new variables
+Is a specialized function which takes a variable and turns it into two new variables
 to be used in a prediction model.
 \enumerate{
 \item the variable for which missing values are imputed by the median for the given year.

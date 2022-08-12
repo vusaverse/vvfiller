@@ -1,4 +1,3 @@
-
 #' Check if some missing values are present
 #'
 #' Check if some missing values are present, but not all are missing.
