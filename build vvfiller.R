@@ -1,52 +1,52 @@
-################################################################################
-### build_vusa.R
-################################################################################
-### R code voor Student Analytics Vrije Universiteit Amsterdam
+############################################### #############################
+### build_vvfiller.R
+############################################### #############################
+### R code for Student Analytics VU University Amsterdam
 ### Copyright 2018 VU
 ### Web Page: http://www.vu.nl
 ### Contact: Theo Bakker (t.c.bakker@vu.nl)
 ###
-### Bestandsnaam: build_vusa.R
-### Doel: Dit script wordt gebruikt om het vusa pacakge te bouwen en te releasen
+### Filename: build_vvfiller.R
+### Purpose: This script is used to build and release the vvfiller pacakge
 ###
-### Afhankelijkheden: Main script.R
+### Dependencies: Main script.R
 ###
-### Gebruikte datasets: Datasets
+### Datasets used: Datasets
 ###
-### Opmerkingen:
-### 1) Geen
+### Comments:
+### 1) None
 ###
-################################################################################
+############################################### #############################
 ### TODO:
-### 1) Geen
+### 1) None
 ###
-################################################################################
-### Geschiedenis:
-### 28-09-2018: JvZ: Aanmaak bestand
-################################################################################
+############################################### #############################
+### History:
+### 28-09-2018: JvZ: Create file
+############################################### #############################
 ## Set project name
 package_name <- basename(rstudioapi::getActiveProject())
-## =============================================================================
-## Installeer en laad de packages in
+## =============================================== ==============================
+## Install and load the packages
 build_packages <- c("devtools",
                     "usethis",
                     "renv")
 
-## installeer de packages die nog niet geinstalleerd zijn
+## install the packages that are not installed yet
 lapply(build_packages[which(!build_packages %in% installed.packages())],
        install.packages)
 
 renv::load("../sa-scripts/")
 
-## laad de packages in
+## load the packages
 invisible(lapply(build_packages,
                  library,
                  character.only = TRUE))
 
-## =============================================================================
-## Bouw het nieuwe vusa package
+## =============================================== ==============================
+## Build the new vusa package
 
-## Pull nu eerst de laatste versie (bvb via Smartgit)
+## Now first pull the latest version (eg via Smartgit)
 
 ## Create Manual
 devtools::document()
@@ -55,21 +55,21 @@ devtools::test()
 devtools::build_manual(path = paste0("G:/DSZ/SA2016/Datasets/Packages/package_man/", package_name, "/"))
 
 
-## Commit je veranderingen in Smartgit (of handmatig in de terminal, naast console)
-# Als je dit niet doet krijg je bij onderstaande (use_version) command de vraag:
+## Commit your changes in Smartgit (or manually in the terminal, next to console)
+# If you don't do this, you will get the question with the (use_version) command below:
 #There are uncommitted changes and you're about to bump version
 #Do you want to proceed anyway?
-# Voordat je op deze vraag antwoord kun je ook nog committen, maar als je dit niet
-# doet wordt er niks veranderd
+# Before answering this question you can also commit, but if you don't
+# nothing is changed
 
 
-## Hoog het versienummer op en check die wijziging in in Git
+## Increment the version number and check in that change in Git
 usethis::use_version()
 
-## Bouw het package, en release het naar de juiste folder
+## Build the package, and release it to the correct folder
 devtools::build(path = paste0("G:/DSZ/SA2016/Datasets/Packages/", package_name, "/"))
 
-## Maak weer gebruik van de development versie
+## Make use of the development version again
 usethis::use_dev_version()
 
 ## push changes
