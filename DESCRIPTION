@@ -1,6 +1,6 @@
 Package: vvfiller
 Title: Fill Data Points
-Version: 0.6.1
+Version: 0.6.1.9000
 Authors@R: c(
     person("Hadley", "Wickham", email = "hadley@rstudio.com", role = "cre"),
     person("Winston", "Chang", email = "winston@rstudio.com", role = "aut"),
