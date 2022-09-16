@@ -4,7 +4,7 @@
 \alias{na_impute_median}
 \title{NA impute median}
 \usage{
-na_impute_median(data, var, year = 2014)
+na_impute_median(data, var, year = 2014, year_column)
 }
 \arguments{
 \item{data}{The data frame.}
@@ -12,6 +12,8 @@ na_impute_median(data, var, year = 2014)
 \item{var}{The variable used to create new variables.}
 
 \item{year}{Year used for the median for imputation.}
+
+\item{year_column}{Column with year to use median on.}
 }
 \value{
 New data frame in which missing values are filled.
