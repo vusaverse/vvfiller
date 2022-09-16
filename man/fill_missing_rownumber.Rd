@@ -7,19 +7,17 @@
 fill_missing_rownumber(x)
 }
 \arguments{
-\item{x}{een vector met integers}
+\item{x}{Integer vector.}
 }
 \value{
-x, met de NA's opgevuld indien mogelijk
+Integer vector with filled values.
 }
 \description{
-Een functie om missende waarden van een telvariabele op te vullen. De ontbrekende
-missende waarden worden opgevuld door door te tellen vanaf de laatst bekende
-waarde.
-c(NA,4,NA,NA) wordt bijvoorbeeld c(NA,4,5,6)
+Impute missing values of a count variable. Imputation is done by counting from
+the last known value. Example: c(NA,4,NA,NA) then becomes c(NA,4,NA,NA).
 }
 \examples{
 fill_missing_rownumber(c(NA,4,NA,NA))
 }
-\concept{missing data functies}
-\concept{vector berekeningen}
+\concept{missing data functions}
+\concept{vector calculations}
