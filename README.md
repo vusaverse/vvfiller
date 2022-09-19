@@ -1,5 +1,7 @@
 # README #
 
+# vvfiller <a href='https://github.com/vusaverse/vvfiller'><img src='man/figures/vvfiller.png' align="right" height="138.5" /></a>
+
 ### What is this repository for? ###
 
 Perform data imputations in the scope of Student Analytics.
