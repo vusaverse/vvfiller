@@ -15,6 +15,9 @@ fill_missing(x, min_known_n = NULL, min_known_p = NULL, type)
 
 \item{type}{the type of fill missing function to be called}
 }
+\value{
+filled vector
+}
 \description{
 wrapper function to do check and call all fill_vector functions
 }

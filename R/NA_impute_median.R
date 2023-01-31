@@ -14,7 +14,6 @@
 #' @return New data frame in which missing values are filled.
 #' @export
 na_impute_median <- function(data, var, year = 2014, year_column){
-  print(var)
 
   ## Add an indicator for when
   data[,paste("NA_ind_", var, sep="")] <- is.na(data[,var])
