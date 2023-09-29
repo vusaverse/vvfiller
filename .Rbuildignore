@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 ^build vvfiller.R
 ^cran-comments\.md$
+^\.github$

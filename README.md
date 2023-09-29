@@ -1,6 +1,10 @@
 # README #
 
-# vvfiller <a href='https://github.com/vusaverse/vvfiller'><img src='man/figures/vvfiller.png' align="right" height="138.5" /></a>
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/vusaverse/vvfiller/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vusaverse/vvfiller/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+
+# vvfiller <a href='https://github.com/vusaverse/vvfiller'><img src='man/figures/hex-vvfiller.png' align="right" height="138.5" /></a>
 
 The vvfiller package is designed to assist with data imputation within the scope of Student Analytics. It provides a collection of functions that can be used to fill missing or skewed data points in R. This package aims to make the imputation process more efficient and accurate, enabling users to handle incomplete datasets effectively.
 Purpose
