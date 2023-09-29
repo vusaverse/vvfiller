@@ -2,6 +2,12 @@
 
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/vusaverse/vvfiller/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vusaverse/vvfiller/actions/workflows/R-CMD-check.yaml)
+  
+  [![CodeFactor](https://www.codefactor.io/repository/github/vusaverse/vvfiller/badge)](https://www.codefactor.io/repository/github/vusaverse/vvfiller)
+[![CRAN status](https://www.r-pkg.org/badges/version/vvfiller)](https://CRAN.R-project.org/package=vvfiller/)
+<a href="https://diffify.com/R/vvfiller" target="_blank"><img src="https://diffify.com/diffify-badge.svg" alt="The diffify page for the R package vvfiller" style="width: 100px; max-width: 100%;"></a>
+[![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/last-month/vvfiller?color=green/)](https://cran.r-project.org/package=vvfiller/)
+[![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/grand-total/vvfiller?color=green/)](https://cran.r-project.org/package=vvfiller/)
   <!-- badges: end -->
 
 # vvfiller <a href='https://github.com/vusaverse/vvfiller'><img src='man/figures/hex-vvfiller.png' align="right" height="138.5" /></a>
