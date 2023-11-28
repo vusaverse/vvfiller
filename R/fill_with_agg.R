@@ -24,7 +24,7 @@ fill_df_with_agg_by_group <- function(df, group, columns, overwrite_col = FALSE,
         fill_col_with_agg_by_group(group = c(), col = col_output, statistic = statistic)
     }
 
-    return(df %>% dplyr::select(col_output))
+    return(df %>% dplyr::select(dplyr::all_of(col_output)))
   })
   ## Add updated columns to df
   if (!overwrite_col) {
