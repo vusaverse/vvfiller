@@ -17,7 +17,7 @@ Authors@R:
 Description: Provides numerous functions to fill data.
     These can be applied either to missing or skewed data.
     The functions are designed within the scope of Student Analytics. 
-URL: https://github.com/vusaverse/vvfiller
+URL: https://github.com/vusaverse/vvfiller, https://vusaverse.github.io/vvfiller/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
