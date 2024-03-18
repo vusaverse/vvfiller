@@ -4,3 +4,4 @@
 ^build vvfiller.R
 ^cran-comments\.md$
 ^\.github$
+^codecov\.yml$
